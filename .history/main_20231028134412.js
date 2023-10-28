@@ -19,6 +19,6 @@ const intakeForm = () => {
 // *********  FUNCTION TO START APPLICATION  *********  //
 const startApp = () => {
   introToHatBtn();
-  // intakeForm();
+  intakeForm();
 };
 startApp();
