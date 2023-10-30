@@ -15,11 +15,6 @@ const createCard = (e) => {
       lastName: lastName
     }
     students.push(newStudent);
-    const studentInfo = `<div class="student-card">
-    <p>First Name: ${newStudent.firstName}</p>
-    <p>Last Name: ${newStudent.lastName}</p>
-  </div>`;
-  renderToDom('#container', studentInfo);
 }
 
 // *********  HTML COMPONENT FUNCTIONS  ********* //

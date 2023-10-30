@@ -8,18 +8,13 @@ const renderToDom = (divId, textToRender) => {
 const createCard = (e) => {
   e.preventDefault();
   const firstName = document.querySelector('#first-name').value;
-  const lastName = document.querySelector('#last-name').value;
+  const lastName = document.querySelector('').value;
     const newStudent = {
       id: students.length + 1,
       firstName: firstName,
       lastName: lastName
     }
     students.push(newStudent);
-    const studentInfo = `<div class="student-card">
-    <p>First Name: ${newStudent.firstName}</p>
-    <p>Last Name: ${newStudent.lastName}</p>
-  </div>`;
-  renderToDom('#container', studentInfo);
 }
 
 // *********  HTML COMPONENT FUNCTIONS  ********* //
@@ -36,16 +31,19 @@ const intakeForm = () => {
   <button type="submit" class="btn btn-primary">Submit</button>
   </form>`;
   renderToDom('#container', domstring);
-  document.querySelector('#studentForm').addEventListener('submit', createCard);
 }
 // *********  EVENT LISTENERS  *********  //
 const introButton = () => {
   document.querySelector('#introButton').addEventListener('click',intakeForm);
+}
+const formSubmit = () => {
+  document.querySelector('#studentForm').addEventListener('submit', createCard)
 }
 
 // *********  FUNCTION TO START APPLICATION  *********  //
 const startApp = () => {
   introToHatBtn();
   introButton();
+  formSubmit();
 };
 startApp();
