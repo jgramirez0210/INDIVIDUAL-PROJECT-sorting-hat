@@ -1,5 +1,3 @@
-const students = [];
-
 // *********  UTILITY FUNCTIONS  ********* //
 const renderToDom = (divId, textToRender) => {
   const selectedElement = document.querySelector(divId);
@@ -7,19 +5,11 @@ const renderToDom = (divId, textToRender) => {
 }
 const createCard = (e) => {
   e.preventDefault();
-  const firstName = document.querySelector('#first-name').value;
-  const lastName = document.querySelector('#last-name').value;
+  const firstName = document.querySelector('.form-control[type="text"]').value;
     const newStudent = {
-      id: students.length + 1,
-      firstName: firstName,
-      lastName: lastName
+      id: student.length + 1,
+      
     }
-    students.push(newStudent);
-    const studentInfo = `<div class="student-card">
-    <p>First Name: ${newStudent.firstName}</p>
-    <p>Last Name: ${newStudent.lastName}</p>
-  </div>`;
-  renderToDom('#container', studentInfo);
 }
 
 // *********  HTML COMPONENT FUNCTIONS  ********* //
@@ -31,21 +21,24 @@ const introToHatBtn = () => {
 }
 const intakeForm = () => {
   const domstring = ` <form id="studentForm">
-  <input class="form-control" id="first-name" type="text" placeholder="Students First Name" aria-label="default input example">
-  <input class="form-control" id="last-name" type="text" placeholder="Students Last Name" aria-label="default input example">
+  <input class="form-control" type="text" placeholder="Students First Name" aria-label="default input example">
+  <input class="form-control" type="text" placeholder="Students Last Name" aria-label="default input example">
   <button type="submit" class="btn btn-primary">Submit</button>
   </form>`;
   renderToDom('#container', domstring);
-  document.querySelector('#studentForm').addEventListener('submit', createCard);
 }
 // *********  EVENT LISTENERS  *********  //
 const introButton = () => {
   document.querySelector('#introButton').addEventListener('click',intakeForm);
+}
+const formSubmit = () => {
+  document.querySelector('#studentForm').addEventListener('submit', createCard)
 }
 
 // *********  FUNCTION TO START APPLICATION  *********  //
 const startApp = () => {
   introToHatBtn();
   introButton();
+  formSubmit();
 };
 startApp();

@@ -16,6 +16,7 @@ const createCard = (e) => {
     }
     students.push(newStudent);
     const studentInfo = `<div class="student-card">
+    <p>ID: ${newStudent.id}</p>
     <p>First Name: ${newStudent.firstName}</p>
     <p>Last Name: ${newStudent.lastName}</p>
   </div>`;
