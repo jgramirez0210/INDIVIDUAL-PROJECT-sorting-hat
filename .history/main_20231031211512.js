@@ -6,11 +6,11 @@ let isFormDisplayed = false;
 // *********  UTILITY FUNCTIONS  ********* //\
 const housesRandomizer = () => {
   return Math.floor(Math.random() * 4 ); 
-};
+}
 const renderToDom = (divId, textToRender) => {
   const selectedElement = document.querySelector(divId);
   selectedElement.innerHTML += textToRender;
-};
+}
 const createCard = (e) => {
   e.preventDefault();
     const newStudent = {
@@ -21,7 +21,7 @@ const createCard = (e) => {
     } 
     students.push(newStudent);
     displayCard(students);   
-};
+}
 const displayCard = (array) => {
   let domstring = "";
   array.forEach((student) => {
@@ -37,7 +37,7 @@ const displayCard = (array) => {
   document.querySelector('#first-name').value ='';
   document.querySelector('#last-name').value ='';
   expelStudent();
-};
+}
 const filterByHouse = (house) => {
   return students.filter(student => student.house.toLowerCase() === house.toLowerCase())
 };
@@ -50,20 +50,19 @@ const expel = (studentId) => {
     displayCard(students);
     displayCard(moldyVoldysArmy);
   }
-};
-const expelStudent = () => {
-  if (event.target.classList.contains('expel-button')) {
-      const studentId = parseInt(event.target.getAttribute('data-id'), 10);
-      expel(studentId);
-  }
-};
+  // const student = students.find(student => student.id === studentId);
+  // if (student) {
+  //   student.house = "Lord Moldy Voldy's Army";
+  //   displayCard(students);
+  // }
+}
 // *********  HTML COMPONENT FUNCTIONS  ********* //
 const introToHatBtn = () => {
   const domString = `<div class="d-grid gap-2">
   <button id="introButton" class="btn btn-primary" type="button">Meet Your Destiny</button>
 </div>`;
   renderToDom('#introButton', domString);
-};
+}
 const intakeForm = () => {
   if (isFormDisplayed) return;
   const domstring = ` <form id="studentForm">
@@ -74,7 +73,7 @@ const intakeForm = () => {
   renderToDom('#container', domstring);
   document.querySelector('#studentForm').addEventListener('submit', createCard);
   isFormDisplayed = true;
-};
+}
 const filterButtons = () => {
   const domString = `
     <button class="btn btn-secondary btn-lg buttonRow" id="gryffindor">Gryffindor</button>
@@ -86,11 +85,11 @@ const filterButtons = () => {
     <button class="btn btn-secondary btn-lg buttonRow" id="moldy-voldys-army">Moldy Vold's Army</button>
   `;
     renderToDom('#filterBtns', domString); 
-};
+} 
 // *********  EVENT LISTENERS  *********  //
 const introButton = () => {
   document.querySelector('#introButton').addEventListener('click',intakeForm);
-};
+}
 const houseButtonListeners = () => {
   document.getElementById('gryffindor').addEventListener('click',() => {
   const filteredHouse = filterByHouse('gryffindor');
@@ -111,14 +110,16 @@ document.getElementById('slytherin').addEventListener('click',() => {
 document.getElementById('moldy-voldys-army').addEventListener('click', () => {
   displayCard(moldyVoldysArmy)
 })
-document.getElementById('showAllHouses').addEventListener('click',() => {
-  displayCard(students);
+document,getElementById('showAllHouses').addEventListener('click',() => {
+  displayCard(filteredHouse)
 })
-document.getElementById('showAll').addEventListener('click', () => {
-  const allStudents = students.concat(moldyVoldysArmy);
-  displayCard(allStudents);
-});
 };
+const expelStudent = () => {
+  if (event.target.classList.contains('expel-button')) {
+      const studentId = parseInt(event.target.getAttribute('data-id'), 10);
+      expel(studentId);
+  }
+}
 document.querySelector('#cardsContainer').addEventListener('click', expelStudent);
 // *********  FUNCTION TO START APPLICATION  *********  //s
 const startApp = () => {

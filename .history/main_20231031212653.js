@@ -86,11 +86,11 @@ const filterButtons = () => {
     <button class="btn btn-secondary btn-lg buttonRow" id="moldy-voldys-army">Moldy Vold's Army</button>
   `;
     renderToDom('#filterBtns', domString); 
-};
+} ;
 // *********  EVENT LISTENERS  *********  //
 const introButton = () => {
   document.querySelector('#introButton').addEventListener('click',intakeForm);
-};
+}
 const houseButtonListeners = () => {
   document.getElementById('gryffindor').addEventListener('click',() => {
   const filteredHouse = filterByHouse('gryffindor');
