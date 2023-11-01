@@ -90,7 +90,7 @@ const filterButtons = () => {
 // *********  EVENT LISTENERS  *********  //
 const introButton = () => {
   document.querySelector('#introButton').addEventListener('click',intakeForm);
-};
+}
 const houseButtonListeners = () => {
   document.getElementById('gryffindor').addEventListener('click',() => {
   const filteredHouse = filterByHouse('gryffindor');
