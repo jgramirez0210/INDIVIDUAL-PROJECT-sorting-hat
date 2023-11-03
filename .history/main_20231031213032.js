@@ -81,7 +81,7 @@ const filterButtons = () => {
     <button class="btn btn-secondary btn-lg buttonRow" id="hufflepuff">Hufflepuff</button>
     <button class="btn btn-secondary btn-lg buttonRow" id="ravenclaw">Ravenclaw</button>
     <button class="btn btn-secondary btn-lg buttonRow" id="slytherin">Slytherin</button>
-    <button class="btn btn-secondary btn-lg buttonRow" id="showAllStudents">Show All Students</button>
+    <button class="btn btn-secondary btn-lg buttonRow" id="showAllStudents">Show All Student's</button>
     <button class="btn btn-secondary btn-lg buttonRow" id="showAll">Show All</button>
     <button class="btn btn-secondary btn-lg buttonRow" id="moldy-voldys-army">Moldy Vold's Army</button>
   `;
