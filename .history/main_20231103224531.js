@@ -52,7 +52,8 @@ const expel = (studentId) => {
   }
 };
 const expelStudent = (e) => {
-  if (event.target.classList.contains('expel-button')) {
+  e.preventDefault();
+  if (e.target.classList.contains('expel-button')) {
       const studentId = parseInt(event.target.getAttribute('data-id'), 10);
       expel(studentId);
   }

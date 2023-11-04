@@ -8,8 +8,7 @@
   justify-content: center;
   align-items: center;
   border: 1px solid black;
-  border-radius: 10px;
-  height: 100vh;
+  border-radius: 10px
 }
 .student-card {
   display: flex;

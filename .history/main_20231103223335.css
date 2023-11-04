@@ -5,19 +5,11 @@
 #cardsContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid black;
-  border-radius: 10px;
-  height: 100vh;
 }
 .student-card {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 25px;
+  flex-direction: c;
+  margin: 50px;
   border: 1px solid black;
   border-radius: 15px;
   width: 200px;
