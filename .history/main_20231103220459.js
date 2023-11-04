@@ -74,7 +74,7 @@ const intakeForm = () => {
   renderToDom('#container', domstring);
   document.querySelector('#studentForm').addEventListener('submit', () => {
     createCard(event);
-  document.querySelector('.filter-button-container').style.display = 'block';
+  document.querySelector('.filter-buttons-container').style.display = 'block';
   });
   isFormDisplayed = true;
 };
