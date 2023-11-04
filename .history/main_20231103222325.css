@@ -1,0 +1,9 @@
+.expelled-student-card {
+  color: red;
+  background-color: black;
+}
+.student-card {
+  /* display: flex;
+  flex: row; */
+  padding: 20px;
+}

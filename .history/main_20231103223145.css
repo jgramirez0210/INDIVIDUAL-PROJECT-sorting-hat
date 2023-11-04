@@ -1,0 +1,13 @@
+.expelled-student-card {
+  color: red;
+  background-color: black;
+}
+#cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.student-card {
+  margin: 50px;
+  border: 1px solid black;
+  border-radius: ;
+}

@@ -52,7 +52,8 @@ const expel = (studentId) => {
   }
 };
 const expelStudent = (e) => {
-  if (event.target.classList.contains('expel-button')) {
+  e.preventDefault();
+  if (e.target.classList.contains('expel-button')) {
       const studentId = parseInt(event.target.getAttribute('data-id'), 10);
       expel(studentId);
   }
@@ -73,7 +74,7 @@ const intakeForm = () => {
   </form>`;
   renderToDom('#container', domstring);
   document.querySelector('#studentForm').addEventListener('submit', () => {
-    createCard(event);
+    createCard(e);
   document.querySelector('.filter-buttons-container').style.display = 'block';
 
   });

@@ -51,7 +51,8 @@ const expel = (studentId) => {
     displayCard(moldyVoldysArmy);
   }
 };
-const expelStudent = (e) => {
+const expelStudent = () => {
+  .preventDefault();
   if (event.target.classList.contains('expel-button')) {
       const studentId = parseInt(event.target.getAttribute('data-id'), 10);
       expel(studentId);
@@ -74,8 +75,7 @@ const intakeForm = () => {
   renderToDom('#container', domstring);
   document.querySelector('#studentForm').addEventListener('submit', () => {
     createCard(event);
-  document.querySelector('.filter-buttons-container').style.display = 'block';
-
+  document.querySelector('.filter-button-container').style.display = 'block';
   });
   isFormDisplayed = true;
 };
