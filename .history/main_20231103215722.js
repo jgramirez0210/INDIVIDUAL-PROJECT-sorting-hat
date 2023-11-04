@@ -25,8 +25,8 @@ const createCard = (e) => {
 const displayCard = (array) => {
   let domstring = "";
   array.forEach((student) => {
-    domstring += `<div class="student-card ${student.house === "Lord Moldy Voldy's Army" ? 'expelled-student-card' : ''}">
-    <p>First Name: ${student.firstName}</p>
+    domstring += `<div class="student-card" ${student.house === "Lord Moldy Voldy's Army" ? 'expelled-student-card' : ''}">
+    <p>First Name: ${student.firstName}</p>s
     <p>Last Name: ${student.lastName}</p>
     <p>House: ${student.house}</p>
     <button class="btn btn-danger expel-button" data-id="${student.id}">Expel</button>
@@ -72,10 +72,7 @@ const intakeForm = () => {
   <button type="submit" class="btn btn-primary">Submit</button>
   </form>`;
   renderToDom('#container', domstring);
-  document.querySelector('#studentForm').addEventListener('submit', () => {
-    createCard(event);
-  document.querySelector('.filter-button-container').style.display = 'block';
-  });
+  document.querySelector('#studentForm').addEventListener('submit', createCard);
   isFormDisplayed = true;
 };
 const filterButtons = () => {
