@@ -129,7 +129,7 @@ document.getElementById('showAll').addEventListener('click', () => {
   const allStudents = students.concat(moldyVoldysArmy);
   displayCard(allStudents);
 });
-};
+// };
 document.querySelector('#cardsContainer').addEventListener('click', expelStudent);
 // *********  FUNCTION TO START APPLICATION  *********  //s
 const startApp = () => {

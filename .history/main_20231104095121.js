@@ -95,6 +95,27 @@ const filterButtons = () => {
 const introButton = () => {
   document.querySelector('#introButton').addEventListener('click',intakeForm);
 };
+const filterButtons = () => {
+  const buttonNames = [
+    'Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin',
+    'Show All Students', 'Show All', "Moldy Voldy's Army"
+  ];
+
+  const domString = buttonNames.map(name => `
+    <button class="btn btn-secondary btn-lg buttonRow" id="${name.toLowerCase().replace(/ /g, '-')}">${name}</button>
+  `).join('');
+
+  renderToDom('#filterBtns', domString);
+
+  // Adding event listeners for each button
+  buttonNames.forEach(name => {
+    document.getElementById(name.toLowerCase().replace(/ /g, '-')).addEventListener('click', () => {
+      const filteredHouse = filterByHouse(name.toLowerCase());
+      displayCard(filteredHouse);
+    });
+  });
+};
+
 // const houses = ['gryffindor', 'hufflepuff', 'ravenclaw', 'slytherin'];
 // houses.forEach(house => {
 //   document.getElementById(house).addEventListener('click', () => {
@@ -102,34 +123,34 @@ const introButton = () => {
 //     displayCard(filteredHouse)
 //   });
 // });
-const houseButtonListeners = () => {
-  document.getElementById('gryffindor').addEventListener('click',() => {
-  const filteredHouse = filterByHouse('gryffindor');
-  displayCard(filteredHouse);
-})
-document.getElementById('hufflepuff').addEventListener('click',() => {
-  const filteredHouse = filterByHouse('hufflepuff');
-  displayCard(filteredHouse);
-})
-document.getElementById('ravenclaw').addEventListener('click',() => {
-  const filteredHouse = filterByHouse('ravenclaw');
-  displayCard(filteredHouse);
-})
-document.getElementById('slytherin').addEventListener('click',() => {
-  const filteredHouse = filterByHouse('slytherin');
-  displayCard(filteredHouse);
-})
-document.getElementById('moldy-voldys-army').addEventListener('click', () => {
-  displayCard(moldyVoldysArmy)
-})
-document.getElementById('showAllStudents').addEventListener('click',() => {
-  displayCard(students);
-})
-document.getElementById('showAll').addEventListener('click', () => {
-  const allStudents = students.concat(moldyVoldysArmy);
-  displayCard(allStudents);
-});
-};
+// const houseButtonListeners = () => {
+//   document.getElementById('gryffindor').addEventListener('click',() => {
+//   const filteredHouse = filterByHouse('gryffindor');
+//   displayCard(filteredHouse);
+// })
+// document.getElementById('hufflepuff').addEventListener('click',() => {
+//   const filteredHouse = filterByHouse('hufflepuff');
+//   displayCard(filteredHouse);
+// })
+// document.getElementById('ravenclaw').addEventListener('click',() => {
+//   const filteredHouse = filterByHouse('ravenclaw');
+//   displayCard(filteredHouse);
+// })
+// document.getElementById('slytherin').addEventListener('click',() => {
+//   const filteredHouse = filterByHouse('slytherin');
+//   displayCard(filteredHouse);
+// })
+// document.getElementById('moldy-voldys-army').addEventListener('click', () => {
+//   displayCard(moldyVoldysArmy)
+// })
+// document.getElementById('showAllStudents').addEventListener('click',() => {
+//   displayCard(students);
+// })
+// document.getElementById('showAll').addEventListener('click', () => {
+//   const allStudents = students.concat(moldyVoldysArmy);
+//   displayCard(allStudents);
+// });
+// };
 document.querySelector('#cardsContainer').addEventListener('click', expelStudent);
 // *********  FUNCTION TO START APPLICATION  *********  //s
 const startApp = () => {
