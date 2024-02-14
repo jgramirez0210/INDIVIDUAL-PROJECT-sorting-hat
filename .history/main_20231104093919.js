@@ -95,13 +95,7 @@ const filterButtons = () => {
 const introButton = () => {
   document.querySelector('#introButton').addEventListener('click',intakeForm);
 };
-// const houses = ['gryffindor', 'hufflepuff', 'ravenclaw', 'slytherin'];
-// houses.forEach(house => {
-//   document.getElementById(house).addEventListener('click', () => {
-//     const filteredHouse = filterByHouse(house);
-//     displayCard(filteredHouse)
-//   });
-// });
+
 const houseButtonListeners = () => {
   document.getElementById('gryffindor').addEventListener('click',() => {
   const filteredHouse = filterByHouse('gryffindor');
